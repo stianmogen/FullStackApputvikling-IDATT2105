@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oblig 4 Team 14</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="calculator-display">
+        <h1>{{title}}</h1>
+        <div class="calculator-container">
+          <div class="calculator-grid">
+            <div class="answer"> 
+              {{answer}}
+            
+              <div class="table">
+                <div class="screen"></div>
+                <div class="numbers">
+                  <button v-on:click="">1</button>
+                  <button v-on:click="">2</button>
+                  <button v-on:click="">3</button>
+                  <button v-on:click="">4</button>
+                  <button v-on:click="">5</button>
+                  <button v-on:click="">6</button>
+                  <button v-on:click="">7</button>
+                  <button v-on:click="">8</button>
+                  <button v-on:click="">9</button>
+                  <button> </button>
+                  <button v-on:click="setCurrent($event)">0</button>
+                  <button>.</button>
+                </div>
+                <div class="operators">
+                  <button id="plus" v-on:click="">+</button>
+                  <button id="minus" v-on:click="">-</button>
+                  <button id="divide" v-on:click="">/</button>
+                  <button id="multiply" v-on:click="">*</button>
+                  <button id="equals" v-on:click="">=</button>
+                  <button id="Ans" v-on:click="">Ans</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
