@@ -20,21 +20,32 @@ const app = Vue.createApp({
         },
         operate(value){
             selectedOperator = value;
-            
+
             if (this.current && this.previous)
                 this.current = this.calculate();
-            
-            if (selectedOperator === '=') this.operator = "";
-            else this.operator = selectedOperator;
+
+            this.operator = selectedOperator;
+
+            if (this.current === '') return; 
+
             this.previous = this.current;
             this.show = this.current;
             this.current = ""; 
 
-            if (decimal) decimal = false; 
+            if (this.decimal) this.decimal = false; 
+            
+        },
+        equals(){
+            this.current = this.calculate()
+            this.previous = this.current;
+            this.show = this.current;
+            this.current = ""; 
         },
         calculate(){
             if (this.current === "")
                 return;
+            if (this.operator === '=')
+                return; 
 
             previous = parseInt(this.previous);
             current = parseInt(this.current);
@@ -43,12 +54,13 @@ const app = Vue.createApp({
             if (this.operator == '+') sum = previous += current;
             if (this.operator == '-') sum = previous -= current;
             if (this.operator == '*') sum = previous *= current;
-            if (this.operator == '/') sum = previous /= current; 
-            //if (this.operator == '=') sum = previous; 
+            if (this.operator == '/') sum = previous /= current;
             
+            this.log.unshift(this.previous + " " + this.operator + " " + this.current + " = " + sum);
             // TODO: add to log
             return sum;
         },
+
         addToLog(variantImage){
             this.image = variantImage; 
         },
@@ -57,6 +69,7 @@ const app = Vue.createApp({
             this.current = "";
             this.previous = "";
             this.show = ""; 
+            this.operator = ""; 
         }
     },
     computed: {
@@ -65,3 +78,17 @@ const app = Vue.createApp({
         }
     }
 })
+function switchScreen(){
+    var x = document.getElementById("result");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    var y = document.getElementById("log");
+    if (y.style.display === "none") {
+        y.style.display = "block";
+    } else {
+        y.style.display = "none";
+    }
+}

@@ -23,11 +23,15 @@ body {
 }
 
 .screen {
-  min-height: 4ch;
+  min-height: 10vh;
   font-size: 5rem;
   color: black;
   background-color: seashell;
   margin-bottom: 1rem;
+}
+
+#log {
+  font-size: 2rem;
 }
 
 button {

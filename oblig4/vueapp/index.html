@@ -13,10 +13,14 @@
       <div class="calculator-display">
         <div class="calculator-container">
           <h1>Easy Calculator</h1>
-          <div class="screen">{{show}}</div>
+          <div class="screen" id="result" style="display: block;">{{show}}</div>
+          <div class="screen" id="log" style="display: none; " v-for="item in log">{{ item }}</div>
+          <ul>
+            <li v-for="item in log">{{ item }}</li>
+         </ul>
           <div class="numbers">
             <div class="row" id="1">
-              <button id="clear">C</button>
+              <button id="clear" @click="clear()">C</button>
               <button id="Ans">Ans</button>
               <button>%</button>
               <button id="divide" @click="operate('/')">/</button>
@@ -41,9 +45,9 @@
             </div>
             <div>
               <button @click="setCurrent(0)">0</button>
-              <button>-</button>
+              <button onclick="switchScreen()">log/calc</button>
               <button>.</button>
-              <button id="equals" @click="operate('=')">=</button>
+              <button id="equals" @click="equals()">=</button>
             </div>
           </div>
         </div>
