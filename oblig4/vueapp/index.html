@@ -14,10 +14,11 @@
         <div class="calculator-container">
           <h1>Easy Calculator</h1>
           <div class="screen" id="result" style="display: block;">{{show}}</div>
-          <div class="screen" id="log" style="display: none; " v-for="item in log">{{ item }}</div>
-          <ul>
-            <li v-for="item in log">{{ item }}</li>
-         </ul>
+          <div class="screen" id="log" style="display: none;">
+            <ul>
+              <li v-for="item in log">{{ item }}</li>
+            </ul>
+          </div>
           <div class="numbers">
             <div class="row" id="1">
               <button id="clear" @click="clear()">C</button>

@@ -24,6 +24,8 @@ body {
 
 .screen {
   min-height: 10vh;
+  max-height: 15vh;
+  overflow-y: scroll;
   font-size: 5rem;
   color: black;
   background-color: seashell;
