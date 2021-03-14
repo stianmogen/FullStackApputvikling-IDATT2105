@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Oblig 4 Team 14</title>
     <!-- Import Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
@@ -13,37 +13,37 @@
       <div class="calculator-display">
         <div class="calculator-container">
           <h1>Easy Calculator</h1>
-          <div class="screen">test</div>
+          <div class="screen">{{show}}</div>
           <div class="numbers">
             <div class="row" id="1">
               <button id="clear">C</button>
               <button id="Ans">Ans</button>
               <button>%</button>
-              <button id="divide">/</button>
+              <button id="divide" @click="operate('/')">/</button>
             </div>
             <div>
-              <button>1</button>
-              <button>2</button>
-              <button>3</button>
-              <button id="multiply">*</button>
+              <button @click ="setCurrent(1)">1</button>
+              <button @click="setCurrent(2)">2</button>
+              <button @click="setCurrent(3)">3</button>
+              <button id="multiply" @click="operate('*')" >*</button>
             </div>
             <div>
-              <button>4</button>
-              <button>5</button>
-              <button>6</button>
-              <button id="minus">-</button>
+              <button @click="setCurrent(4)">4</button>
+              <button @click="setCurrent(5)">5</button>
+              <button @click="setCurrent(6)">6</button>
+              <button id="minus" @click="operate('-')">-</button>
             </div>
             <div>
-              <button>7</button>
-              <button>8</button>
-              <button>9</button>
-              <button id="plus">+</button>
+              <button @click="setCurrent(7)">7</button>
+              <button @click="setCurrent(8)">8</button>
+              <button @click="setCurrent(9)">9</button>
+              <button id="plus" @click="operate('+')">+</button>
             </div>
             <div>
-              <button v-on:click="append($event)">0</button>
+              <button @click="setCurrent(0)">0</button>
               <button>-</button>
               <button>.</button>
-              <button id="equals">=</button>
+              <button id="equals" @click="operate('=')">=</button>
             </div>
           </div>
         </div>
