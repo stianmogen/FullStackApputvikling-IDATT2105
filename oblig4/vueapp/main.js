@@ -47,8 +47,8 @@ const app = Vue.createApp({
             if (this.operator === '=')
                 return; 
 
-            previous = parseInt(this.previous);
-            current = parseInt(this.current);
+            previous = parseFloat(this.previous);
+            current = parseFloat(this.current);
 
             sum = "";
             if (this.operator == '+') sum = previous += current;
@@ -57,8 +57,7 @@ const app = Vue.createApp({
             if (this.operator == '/') sum = previous /= current;
             
             this.log.unshift(this.previous + " " + this.operator + " " + this.current + " = " + sum);
-            // TODO: add to log
-            return sum;
+            return sum.toFixed(4);
         },
 
         addToLog(variantImage){

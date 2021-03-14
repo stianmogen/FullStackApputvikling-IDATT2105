@@ -46,7 +46,7 @@
             <div>
               <button class="calc-btn" @click="setCurrent(0)">0</button>
               <button class="calc-btn" onclick="switchScreen()">log</button>
-              <button class="calc-btn" >.</button>
+              <button class="calc-btn" @click="setCurrent('.')" >.</button>
               <button id="acc2" class="calc-btn" id="equals" @click="equals()">=</button>
             </div>
           </div>
