@@ -12,7 +12,6 @@
     <div id="app">
       <div class="calculator-display">
         <div class="calculator-container">
-          <h1>Easy Calculator</h1>
           <div class="screen" id="result" style="display: block;">{{show}}</div>
           <div class="screen" id="log" style="display: none;">
             <ul>
@@ -21,34 +20,34 @@
           </div>
           <div class="numbers">
             <div class="row" id="1">
-              <button id="clear" @click="clear()">C</button>
-              <button id="Ans">Ans</button>
-              <button>%</button>
-              <button id="divide" @click="operate('/')">/</button>
+              <button id="acc1" class="calc-btn" id="clear" @click="clear()">C</button>
+              <button id="acc1" class="calc-btn" id="Ans">Ans</button>
+              <button id="acc1" class="calc-btn" >%</button>
+              <button id="acc2" class="calc-btn" id="divide" @click="operate('/')">/</button>
             </div>
             <div>
-              <button @click ="setCurrent(1)">1</button>
-              <button @click="setCurrent(2)">2</button>
-              <button @click="setCurrent(3)">3</button>
-              <button id="multiply" @click="operate('*')" >*</button>
+              <button class="calc-btn" @click ="setCurrent(1)">1</button>
+              <button class="calc-btn" @click="setCurrent(2)">2</button>
+              <button class="calc-btn" @click="setCurrent(3)">3</button>
+              <button id="acc2" class="calc-btn" id="multiply" @click="operate('*')" >*</button>
             </div>
             <div>
-              <button @click="setCurrent(4)">4</button>
-              <button @click="setCurrent(5)">5</button>
-              <button @click="setCurrent(6)">6</button>
-              <button id="minus" @click="operate('-')">-</button>
+              <button class="calc-btn" @click="setCurrent(4)">4</button>
+              <button class="calc-btn" @click="setCurrent(5)">5</button>
+              <button class="calc-btn" @click="setCurrent(6)">6</button>
+              <button id="acc2" class="calc-btn" id="minus" @click="operate('-')">-</button>
             </div>
             <div>
-              <button @click="setCurrent(7)">7</button>
-              <button @click="setCurrent(8)">8</button>
-              <button @click="setCurrent(9)">9</button>
-              <button id="plus" @click="operate('+')">+</button>
+              <button class="calc-btn" @click="setCurrent(7)">7</button>
+              <button class="calc-btn" @click="setCurrent(8)">8</button>
+              <button class="calc-btn" @click="setCurrent(9)">9</button>
+              <button id="acc2" class="calc-btn" id="plus" @click="operate('+')">+</button>
             </div>
             <div>
-              <button @click="setCurrent(0)">0</button>
-              <button onclick="switchScreen()">log/calc</button>
-              <button>.</button>
-              <button id="equals" @click="equals()">=</button>
+              <button class="calc-btn" @click="setCurrent(0)">0</button>
+              <button class="calc-btn" onclick="switchScreen()">log</button>
+              <button class="calc-btn" >.</button>
+              <button id="acc2" class="calc-btn" id="equals" @click="equals()">=</button>
             </div>
           </div>
         </div>

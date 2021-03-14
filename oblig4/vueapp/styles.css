@@ -1,3 +1,5 @@
+
+
 body {
   background-color: #17151d;
   margin: 2em;
@@ -9,6 +11,9 @@ body {
   display: flex;
   flex-direction: row;
   background-color: rgb(68, 69, 77);
+  max-width: fit-content;
+  margin: auto;
+  border-radius: 5px;
 }
 
 .calculator-container {
@@ -23,32 +28,61 @@ body {
 }
 
 .screen {
-  min-height: 10vh;
-  max-height: 15vh;
-  overflow-y: scroll;
-  font-size: 5rem;
-  color: black;
-  background-color: seashell;
-  margin-bottom: 1rem;
+  min-height: 11rem;
+  max-height: 17rem;
+  font-size: 7rem;
+  color: white;
+  text-align: right;
+  line-height: 11rem;
+  white-space: nowrap;
 }
 
 #log {
   font-size: 2rem;
+  overflow-y: scroll;
+  line-height: normal;
 }
 
-button {
-  margin: 1rem;
-  border-radius: 5px;
-  font-size: 3rem;
-  width: 4em;
-  height: 4em;
-  color: rgb(0, 0, 0);
-  text-align: center;
+::-webkit-scrollbar {
+  border-radius: 3px;
+}
+
+.calc-btn {
+  border: none;
+  padding: 10px;
+  font-size: 4rem;
+  font-weight: 200;
+  width: 3em;
+  height: 3em;
+  color: white;
+  justify-content: center;
   cursor: pointer;
+  background-color: #333138;
+  outline: none;
+}
+
+.calc-btn:hover, #acc1:hover, #acc2:hover {
+  background-color: rgb(116, 116, 116);
+}
+
+#acc1:focus, #acc2:focus {
+  background-color: rgb(64, 157, 243);
+}
+
+#acc1 {
+  background-color: #292633;
+}
+
+#acc2 {
+  background-color: #dd5800;
 }
 
 h1 {
   font-size: 2rem;
   color: wheat;
   align-self: center;
+}
+
+ul {
+  list-style-type: none;
 }
