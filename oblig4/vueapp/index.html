@@ -4,44 +4,46 @@
     <meta charset="UTF-8" />
     <title>Oblig 4 Team 14</title>
     <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">
       <div class="calculator-display">
-        <h1>{{title}}</h1>
         <div class="calculator-container">
-          <div class="calculator-grid">
-            <div class="answer"> 
-              {{answer}}
-            
-              <div class="table">
-                <div class="screen"></div>
-                <div class="numbers">
-                  <button v-on:click="">1</button>
-                  <button v-on:click="">2</button>
-                  <button v-on:click="">3</button>
-                  <button v-on:click="">4</button>
-                  <button v-on:click="">5</button>
-                  <button v-on:click="">6</button>
-                  <button v-on:click="">7</button>
-                  <button v-on:click="">8</button>
-                  <button v-on:click="">9</button>
-                  <button> </button>
-                  <button v-on:click="setCurrent($event)">0</button>
-                  <button>.</button>
-                </div>
-                <div class="operators">
-                  <button id="plus" v-on:click="">+</button>
-                  <button id="minus" v-on:click="">-</button>
-                  <button id="divide" v-on:click="">/</button>
-                  <button id="multiply" v-on:click="">*</button>
-                  <button id="equals" v-on:click="">=</button>
-                  <button id="Ans" v-on:click="">Ans</button>
-                </div>
-              </div>
+          <h1>Easy Calculator</h1>
+          <div class="screen">test</div>
+          <div class="numbers">
+            <div class="row" id="1">
+              <button id="clear" v-on:click="">C</button>
+              <button id="Ans" v-on:click="">Ans</button>
+              <button>%</button>
+              <button id="divide" v-on:click="">/</button>
+            </div>
+            <div>
+              <button v-on:click="">1</button>
+              <button v-on:click="">2</button>
+              <button v-on:click="">3</button>
+              <button id="multiply" v-on:click="">*</button>
+            </div>
+            <div>
+              <button v-on:click="">4</button>
+              <button v-on:click="">5</button>
+              <button v-on:click="">6</button>
+              <button id="minus" v-on:click="">-</button>
+            </div>
+            <div>
+              <button v-on:click="">7</button>
+              <button v-on:click="">8</button>
+              <button v-on:click="">9</button>
+              <button id="plus" v-on:click="">+</button>
+            </div>
+            <div>
+              <button v-on:click="append($event)">0</button>
+              <button>-</button>
+              <button>.</button>
+              <button id="equals" v-on:click="">=</button>
             </div>
           </div>
         </div>
@@ -53,7 +55,7 @@
 
     <!-- Mount App -->
     <script>
-      const mountedApp = app.mount('#app')
+      const mountedApp = app.mount("#app");
     </script>
   </body>
 </html>

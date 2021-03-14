@@ -1,0 +1,48 @@
+body {
+  background-color: #17151d;
+  margin: 2em;
+  font-family: tahoma;
+  color: #282828;
+}
+
+.calculator-display {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(68, 69, 77);
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+.screen {
+  min-height: 4ch;
+  font-size: 5rem;
+  color: black;
+  background-color: seashell;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin: 1rem;
+  border-radius: 5px;
+  font-size: 3rem;
+  width: 4em;
+  height: 4em;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2rem;
+  color: wheat;
+  align-self: center;
+}
