@@ -57,7 +57,7 @@ const app = Vue.createApp({
             if (this.operator == '/') sum = previous /= current;
             
             this.log.unshift(this.previous + " " + this.operator + " " + this.current + " = " + sum);
-            return sum.toFixed(4);
+            return Math.round(sum * 10000) / 10000;
         },
 
         addToLog(variantImage){
