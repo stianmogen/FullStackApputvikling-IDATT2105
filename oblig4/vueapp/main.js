@@ -9,7 +9,6 @@ const app = Vue.createApp({
             product: 'Kalkulator',
             brand: 'Team 17',
             description: 'Mogen, Schiøll-Johansen, Steira',
-            decimal: false
         }
     },
     methods: {
@@ -31,9 +30,7 @@ const app = Vue.createApp({
             this.previous = this.current;
             this.show = this.current;
             this.current = ""; 
-
-            if (this.decimal) this.decimal = false; 
-            
+           
         },
         equals(){
             this.current = this.calculate()
