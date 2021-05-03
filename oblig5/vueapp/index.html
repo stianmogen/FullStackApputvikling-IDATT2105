@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Oblig 5 Team 14</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="calculator-display">
+        <div class="calculator-container">
+          <div class="screen" id="result" style="display: block;">{{show}}</div>
+          <div class="screen" id="log" style="display: none;">
+            <ul>
+              <li v-for="item in log">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="numbers">
+            <div class="row" id="1">
+              <button id="acc1" class="calc-btn" id="clear" @click="clear()">C</button>
+              <button id="acc1" class="calc-btn" id="Ans">Ans</button>
+              <button id="acc1" class="calc-btn" >%</button>
+              <button id="acc2" class="calc-btn" id="divide" @click="setOperator('DIVISION')">/</button>
+            </div>
+            <div>
+              <button class="calc-btn" @click ="setCurrent(1)">1</button>
+              <button class="calc-btn" @click="setCurrent(2)">2</button>
+              <button class="calc-btn" @click="setCurrent(3)">3</button>
+              <button id="acc2" class="calc-btn" id="multiply" @click="setOperator('MULTIPLICATION')" >*</button>
+            </div>
+            <div>
+              <button class="calc-btn" @click="setCurrent(4)">4</button>
+              <button class="calc-btn" @click="setCurrent(5)">5</button>
+              <button class="calc-btn" @click="setCurrent(6)">6</button>
+              <button id="acc2" class="calc-btn" id="minus" @click="setOperator('SUBTRACTION')">-</button>
+            </div>
+            <div>
+              <button class="calc-btn" @click="setCurrent(7)">7</button>
+              <button class="calc-btn" @click="setCurrent(8)">8</button>
+              <button class="calc-btn" @click="setCurrent(9)">9</button>
+              <button id="acc2" class="calc-btn" id="plus" @click="setOperator('ADDITION')">+</button>
+            </div>
+            <div>
+              <button class="calc-btn" @click="setCurrent(0)">0</button>
+              <button class="calc-btn" onclick="switchScreen()">log</button>
+              <button class="calc-btn" @click="setCurrent('.')" >.</button>
+              <button id="acc2" class="calc-btn" id="equals" @click="equals()">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
